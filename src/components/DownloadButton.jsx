@@ -1,7 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import style from './downloadButton.module.css'
 
-function DownloadButton({ plan }) {
+function DownloadButton() {
+    const plan = useSelector((state) => state.training.arr)
     const handleDownload = () => {
         let str = ''
         for (let i = 0; i < plan.length; i++) {
@@ -19,9 +21,11 @@ function DownloadButton({ plan }) {
     }
 
     return (
-        <button onClick={handleDownload} className={style.btnDownload}>
-            Download
-        </button>
+        <div className={style.downloadButtonBlock}>
+            <button onClick={handleDownload} className={style.btnDownload}>
+                Download
+            </button>
+        </div>
     )
 }
 

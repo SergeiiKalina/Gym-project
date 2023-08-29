@@ -1,22 +1,32 @@
-import img from '../image/IMG-39ecee3d968d544e854d0d857e831f16-V-removebg-preview.png'
-import style from './aboutme.module.css'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Pagination } from 'swiper'
+import SlideForSlider from './SlideForSlider'
+
+import 'swiper/swiper.min.css'
+import './../../node_modules/swiper/modules/pagination/pagination.min.css'
 
 function AboutMe() {
+    SwiperCore.use([Pagination])
     return (
-        <div className={style.block}>
-            <div>
-                <img src={img} />
-            </div>
-            <div className={style.block_paragraph}>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Expedita repellendus, necessitatibus maxime sed molestias a
-                    vero accusamus. Similique, officia. Quaerat facilis vel
-                    architecto assumenda, tenetur et laborum molestias
-                    distinctio facere!
-                </p>
-            </div>
-        </div>
+        <Swiper
+            style={{ borderRadius: '20px' }}
+            spaceBetween={10}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+        >
+            <SwiperSlide>
+                <SlideForSlider />
+            </SwiperSlide>
+            <SwiperSlide>
+                <SlideForSlider />
+            </SwiperSlide>
+            <SwiperSlide>
+                <SlideForSlider />
+            </SwiperSlide>
+            <SwiperSlide>
+                <SlideForSlider />
+            </SwiperSlide>
+        </Swiper>
     )
 }
 export default AboutMe

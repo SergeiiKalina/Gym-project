@@ -1,0 +1,61 @@
+@import './adaptive-fontMixin.scss';
+.article {
+    display: flex;
+    .aside {
+        width: 15%;
+        .nav {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            label {
+                @include adaptive-font(18, 16);
+                .button {
+                    margin: 12px 10px 12px 0;
+                    background-color: cornflowerblue;
+                    border: 1px solid #9b5656;
+                    border-radius: 10px;
+                    color: aliceblue;
+                    transition: background-color 0.3s, color 0.3s;
+                }
+            }
+        }
+    }
+}
+.blockTrening {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    p {
+        @include adaptive-font(20, 16);
+        padding: 6px 0 10px 10px;
+        margin-bottom: 24px;
+        color: midnightblue;
+        font-weight: 600;
+    }
+}
+.trainingItem {
+    width: 31%;
+}
+
+.blockTrening img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+@media (max-width: 560px) {
+    .article {
+        flex-direction: column;
+    }
+    .blockTrening {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .trainingItem {
+        width: 48%;
+        padding: 16px 0 0 0;
+    }
+}

@@ -5,6 +5,7 @@ function Mylayouts() {
     return (
         <>
             <Header />
+
             <Outlet />
         </>
     )

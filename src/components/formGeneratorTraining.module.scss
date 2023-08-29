@@ -1,0 +1,119 @@
+@import './adaptive-fontMixin.scss';
+
+.wrapper {
+    width: 50%;
+    margin: 0 auto;
+    h3 {
+        @include adaptive-font(24, 16);
+    }
+}
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 24px 0 0 0;
+}
+.article {
+    display: flex;
+}
+.article input {
+    margin: 0 0 0 1rem;
+}
+.article label {
+    display: flex;
+    @include adaptive-font(18, 14);
+    padding: 0 0 0 1rem;
+}
+.section {
+    width: 100%;
+    display: flex;
+    margin: 18px 0 0 0;
+    align-items: center;
+}
+.section p {
+    @include adaptive-font(20, 14);
+    font-weight: 600;
+    color: orangered;
+}
+
+.select {
+    width: 100%;
+    margin: 24px 0 0 0;
+    padding: 10px;
+}
+
+.labelNameForm {
+    @include adaptive-font(18, 14);
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0 0 0;
+    input {
+        width: 50%;
+        min-width: 200px;
+        padding: 4px;
+        outline: none;
+        margin: 0 0 0 1rem;
+    }
+}
+
+.blockButton {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    margin: 24px 0 0 0;
+    padding: 10px;
+}
+.buttonSend {
+    display: flex;
+    color: aliceblue;
+    background-color: indianred;
+    padding: 12px 32px;
+    @include adaptive-font(18, 14);
+    align-items: center;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.buttonClear {
+    display: flex;
+    color: aliceblue;
+    background-color: royalblue;
+    padding: 12px 32px;
+    @include adaptive-font(18, 14);
+    align-items: center;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.split {
+    label {
+        @include adaptive-font(12, 12);
+    }
+}
+@media (max-width: 767px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+@media (max-width: 460px) {
+    .labelNameForm {
+        flex-direction: column;
+        input {
+            margin: 8px 0 0 0;
+        }
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: start;
+    }
+    .article {
+        flex-direction: column;
+        label {
+            justify-content: space-between;
+            padding: 6px 0 0 0;
+        }
+    }
+}

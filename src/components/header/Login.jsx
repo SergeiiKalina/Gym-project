@@ -2,7 +2,6 @@ import style from './login.module.css'
 import { auth, provider } from '../layouts/config'
 import { signInWithPopup } from 'firebase/auth'
 import { useEffect, useState } from 'react'
-import UserProfile from '../layouts/User'
 import Logout from './Logout'
 
 function Login({ onClick }) {
@@ -27,7 +26,6 @@ function Login({ onClick }) {
                     Війти за допомогою Google
                 </button>
             )}
-           
         </div>
     )
 }

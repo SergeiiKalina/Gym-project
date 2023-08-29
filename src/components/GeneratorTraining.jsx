@@ -1,45 +1,49 @@
-import FormGeneratorTraining from './FormGeneratorTrening'
+import FormGeneratorTraining from './FormGeneratorTraining'
 import FinishedTraining from './FinishedTraining'
-import { useState } from 'react'
 import TrainingPlanText from './TrainingPlanText'
+import style from './generatorTraining.module.scss'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeBulTextArea, writeArr } from '../store/generatorTrainingReduser'
+import React from 'react'
 
 function GeneratorTraining() {
-    const [arr, setArr] = useState([])
-    const [bul, setBul] = useState(false)
+    const dispatch = useDispatch()
+    const bul = useSelector((state) => state.training.bul)
+    const bulTextArea = useSelector((state) => state.training.bulTextArea)
 
     const handleDataChange = (newArr) => {
-        setArr(newArr)
+        dispatch(writeArr(newArr))
     }
-    const handlerBulChange = (newBul) => {
-        setBul(newBul)
+
+    const handlerShowTextArea = () => {
+        if (bulTextArea) {
+            dispatch(changeBulTextArea(false))
+        }
+        if (!bulTextArea) {
+            dispatch(changeBulTextArea(true))
+        }
     }
 
     return (
         <div>
-            <h2 style={{ fontSize: '30px' }}>Generator Form</h2>
-            <div
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: '40% 30% 30%',
-                    gridRowGap: '3em',
-                    gridColumnGap: '2rem',
-                    margin: '16px 0 0 0',
-                }}
-            >
-                <FormGeneratorTraining
-                    onDataChange={handleDataChange}
-                    onBulChange={handlerBulChange}
-                    plan={arr}
-                />
-                {bul ? (
-                    <FinishedTraining
-                        value={arr}
-                        onDataChange={handleDataChange}
-                    />
-                ) : (
-                    ''
+            <h2 className={style.header}>Generator Form</h2>
+            <div className={style.block}>
+                {!bul && (
+                    <FormGeneratorTraining onDataChange={handleDataChange} />
                 )}
-                {bul ? <TrainingPlanText plan={arr} /> : ''}
+
+                <section className={style.section}>
+                    {bul ? (
+                        <FinishedTraining
+                            onDataChange={handleDataChange}
+                            onShowTextArea={handlerShowTextArea}
+                            bulTextArea={bulTextArea}
+                        />
+                    ) : (
+                        ''
+                    )}
+                    {bulTextArea ? <TrainingPlanText /> : ''}
+                </section>
             </div>
         </div>
     )

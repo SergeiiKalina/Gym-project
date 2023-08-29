@@ -1,5 +1,5 @@
 {
-    "name": "gup-project",
+    "name": "gym-project",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -8,24 +8,29 @@
         "@fullcalendar/interaction": "^6.1.8",
         "@fullcalendar/react": "^6.1.8",
         "@fullcalendar/timegrid": "^6.1.8",
+        "@reduxjs/toolkit": "^1.9.5",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
         "date-fns": "^2.30.0",
         "firebase": "^9.22.1",
         "react": "^18.2.0",
-        "react-big-calendar": "^1.8.0",
         "react-dom": "^18.2.0",
         "react-firebase-hooks": "^5.1.1",
+        "react-hook-form": "^7.44.3",
         "react-icons": "^4.9.0",
+        "react-redux": "^8.1.1",
         "react-router-dom": "^6.11.2",
         "react-scripts": "5.0.1",
+        "redux": "^4.2.1",
+        "sass": "^1.63.4",
+        "swiper": "^9.4.1",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "jest",
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
@@ -45,5 +50,11 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.22.10",
+        "@babel/preset-react": "^7.22.5",
+        "babel-jest": "^29.6.4",
+        "jest": "^27.5.1"
     }
 }

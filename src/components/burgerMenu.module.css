@@ -1,0 +1,54 @@
+.btnBurger {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 45px;
+}
+.btnBurger span:before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    height: 3px;
+    width: 40px;
+    background-color: black;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.btnBurger span::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    height: 3px;
+    width: 40px;
+    background-color: black;
+    cursor: pointer;
+    transition: all 500ms;
+}
+.btnBurger span {
+    position: absolute;
+    height: 3px;
+    width: 40px;
+    border-bottom: 3px solid black;
+    cursor: pointer;
+}
+.btnBurger .afterClick span {
+    border-bottom: none;
+}
+.btnBurger .afterClick span::after {
+    top: 0;
+    rotate: 45deg;
+    transition: all 500ms;
+}
+.btnBurger .afterClick span:before {
+    top: 0;
+    rotate: -45deg;
+    transition: all 500ms;
+}
+@media (max-width: 767px) {
+    .btnBurger {
+        width: 100%;
+        display: flex;
+    }
+}

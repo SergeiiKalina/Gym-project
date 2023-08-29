@@ -1,0 +1,57 @@
+@import './adaptive-fontMixin.scss';
+.paginationBlock {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0;
+    }
+}
+.input {
+    padding: 8px 10px;
+    @include adaptive-font(18, 16);
+    background-color: cornflowerblue;
+    border: 1px solid #9b5656;
+    border-radius: 10px;
+    color: aliceblue;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+.input:hover {
+    background-color: #9b5656;
+    color: white;
+}
+.input.active {
+    background-color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+.input.active:hover {
+    background-color: white;
+    color: black;
+}
+.buttonPagination {
+    height: 40px;
+    padding: 8px 6px;
+    margin: 35px 0 0 0;
+    font-size: 18px;
+    line-height: 1.5;
+    background-color: cornflowerblue;
+    border: 1px solid #9b5656;
+    border-radius: 10px;
+    color: aliceblue;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.buttonPagination:hover {
+    background-color: #9b5656;
+    color: white;
+}
+
+@media (max-width: 560px) {
+    .paginationBlock {
+        width: 100%;
+    }
+}

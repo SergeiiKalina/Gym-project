@@ -1,6 +1,13 @@
-.btnDownload{
+.downloadButtonBlock {
+    margin-top: 12px;
+}
+.btnDownload {
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    justify-content: center;
     color: aliceblue;
-    background-color:royalblue;
+    background-color: royalblue;
     padding: 12px 32px;
     font-size: 20px;
     border: none;

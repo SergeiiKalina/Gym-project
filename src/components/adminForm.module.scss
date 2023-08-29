@@ -1,0 +1,45 @@
+@import './adaptive-fontMixin.scss';
+.form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    .labelInput {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        @include adaptive-font(18, 16);
+        padding: 8px 0;
+        color: crimson;
+        font-weight: 700;
+        input {
+            padding: 4px 4px;
+        }
+    }
+    .labelSelect {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        @include adaptive-font(18, 16);
+        margin: 0 auto;
+        padding: 8px 0;
+        color: crimson;
+        font-weight: 700;
+        select {
+            margin: 4px 0;
+            padding: 6px 4px;
+        }
+    }
+    button {
+        width: 20%;
+        margin: 0 auto;
+        padding: 10px 4px;
+        @include adaptive-font(18, 16);
+        background-color: cornflowerblue;
+        border: 3px solid #9b5656;
+        border-radius: 25px;
+        color: aliceblue;
+    }
+}

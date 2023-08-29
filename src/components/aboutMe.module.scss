@@ -1,0 +1,59 @@
+@import './adaptive-fontMixin.scss';
+
+.block {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    background: black;
+    -webkit-box-shadow: -6px -15px 28px -3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -6px -15px 28px -3px rgba(0, 0, 0, 0.5);
+    box-shadow: -6px -15px 28px -3px rgba(0, 0, 0, 0.5);
+    .paragraphed {
+        color: aliceblue;
+        @include adaptive-font(22, 14);
+        span {
+            font-size: 20px;
+        }
+    }
+    .blockImg {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        margin: 0 20px 0 0;
+    }
+}
+
+.block_paragraph {
+    width: 100%;
+    margin: auto 20px auto 0;
+}
+
+@media (max-width: 767px) {
+    .block {
+        flex-direction: column;
+        p {
+            width: 80%;
+            color: aliceblue;
+            margin: 0 auto;
+            padding-bottom: 30px;
+        }
+        .blockImg {
+            width: 100%;
+        }
+    }
+    .block_paragraph {
+        width: 100%;
+    }
+
+    .blockImg img {
+        width: 40%;
+    }
+    .hiddenImg {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    .mainPhoto {
+        margin: 0 auto;
+    }
+}

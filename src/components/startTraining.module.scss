@@ -1,0 +1,112 @@
+@import './adaptive-fontMixin.scss';
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .infoBlock {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        div {
+            @include adaptive-font(18, 14);
+            margin: 10px auto 0 auto;
+            font-weight: 600;
+            text-align: center;
+        }
+        output {
+            margin: 10px auto 0 auto;
+            @include adaptive-font(20, 14);
+        }
+    }
+    .blockButton {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px auto 0 auto;
+        .buttonDirection {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .buttonDirection:hover {
+            background-color: #0056b3;
+        }
+
+        .buttonDirection:active {
+            transform: scale(0.95);
+        }
+        .buttonGo {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .buttonGo:hover {
+            background-color: #218838;
+        }
+
+        .buttonGo:active {
+            transform: scale(0.95);
+        }
+    }
+    .blockApproach {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        form {
+            width: 20%;
+            @include adaptive-font(18, 14);
+            margin-top: 24px;
+            margin-bottom: 24px;
+            label {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 12px;
+                input {
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        .infoBlock {
+            width: 100%;
+        }
+        .blockButton {
+            width: 100%;
+        }
+        .blockApproach {
+            form {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .section {
+        .blockApproach {
+            form {
+                width: 80%;
+            }
+        }
+    }
+}
